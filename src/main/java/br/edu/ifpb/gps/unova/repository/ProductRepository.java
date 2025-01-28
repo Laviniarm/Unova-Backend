@@ -1,4 +1,7 @@
 package br.edu.ifpb.gps.unova.repository;
 
-public class ProductRepository {
+import br.edu.ifpb.gps.unova.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductRepository extends JpaRepository<Product, Long> {
 }
