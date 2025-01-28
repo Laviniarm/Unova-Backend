@@ -11,18 +11,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "products")
-public class Product {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String name;
 
-    private String description;
+    @Column(nullable = false, unique = true)
+    private String username;
 
-    private double price;
+    @Column(nullable = false)
+    private String password;
 
-    private String imageUrl;
+    private String role;
+
 }
