@@ -38,9 +38,8 @@ public class ProductService {
             productToUpdate.setQuantity(product.getQuantity());
 
             return Optional.of(productRepository.save(productToUpdate));
-        } else {
-            return Optional.empty();
         }
+        return Optional.empty();
     }
 
     public boolean deleteProduct(Long id) {
