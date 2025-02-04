@@ -42,7 +42,7 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody LoginDTO login) {
-        java.util.Optional<User> userOptional = userService.loginUser(login.getUsername(), login.getPassword());
+        java.util.Optional<User> userOptional = userService.loginUser(login.getEmail(), login.getPassword());
         if (userOptional.isPresent()) {
             return ResponseEntity.ok(userOptional.get());
         } else {
