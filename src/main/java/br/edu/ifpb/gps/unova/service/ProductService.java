@@ -24,7 +24,7 @@ public class ProductService {
     private ProductRepository productRepository;
 
 
-    @Value("${file.upload-dir}")
+    @Value("${file.upload-dir:/tmp}")
     private String uploadDir;
 
     public Product saveProduct(String name, String description, double price, int quantity, MultipartFile image) {
