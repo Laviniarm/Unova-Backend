@@ -1,13 +1,12 @@
 package br.edu.ifpb.gps.unova.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.Data;
+import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -17,11 +16,13 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String description;
+
     private double price;
     private int quantity;
     private boolean isActive;
     private String imageUrl;
-
 }
