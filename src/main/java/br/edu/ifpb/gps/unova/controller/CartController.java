@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/cart")
 public class CartController {
 
@@ -24,6 +24,12 @@ public class CartController {
 
     @PostMapping
     public ResponseEntity<CartItem> addToCart(@RequestBody CartItem cartItem) {
+        System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBB"+cartItem);
+        System.out.println("Recebendo produto no carrinho: " + cartItem);
+        System.out.println("ID: " + cartItem.getId());
+        System.out.println("Nome: " + cartItem.getName());
+        System.out.println("Quantidade: " + cartItem.getQuantity());
+        System.out.println("Versão: " + cartItem.getVersion());
         return ResponseEntity.ok(cartService.addToCart(cartItem));
     }
 
